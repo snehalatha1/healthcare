@@ -10,7 +10,7 @@ pipeline{
 	stages{
 		stage('gitcheckout'){
 			steps {
-				git branch: 'main', url: 'https://github.com/snehalatha1/health-care.git'
+				git branch: 'main', url: 'https://github.com/snehalatha1/healthcare.git'
 			}
 		}
 		stage('package'){
