@@ -4,8 +4,8 @@
    become: true
    tasks:
    - name: deploy app
-     command: kubectl create deployment medicure --image=snehalatha15/healthcare:latest
+     command: kubectl apply -f deployment.yml
    - name: sleeping
      command: sleep 20
    - name: ServiceFile
-     command: kubectl expose deployment medicure --type=NodePort --port=8083
+     command: kubectl expose deployment healthcare --type=NodePort --port=8082
