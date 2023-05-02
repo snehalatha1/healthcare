@@ -18,6 +18,7 @@ resource "aws_instance" "myserver" {
   root_block_device {
       	volume_size = 24
       	volume_type = "gp2"
+  }
   tags = {
     Name = "prodserver"
   }
