@@ -46,13 +46,8 @@
        group: root
        mode: "0755"
    - name: Install dependencies
-     shell: go get
-     args:
-       chdir: /home/ubuntu/cri-dockerd/
-   - name: Build binary
-     shell: go build -o bin/cri-dockerd
-     args:
-       chdir: /home/ubuntu/cri-dockerd/
+     command: ["/bin/sh","-c"]
+     args: ["go get; go build -o bin/cri-dockerd"]
    - name: 15
      command: mkdir -p /usr/local/bin
    - name: Install cri-dockerd binary
