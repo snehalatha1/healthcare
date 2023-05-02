@@ -36,6 +36,7 @@
    - name: 11
      become: true
      script: bashProfile.sh
+   - name: change dir  
      args:
        chdir: /home/ubuntu/cri-dockerd
    - name: Create directory
@@ -46,9 +47,9 @@
        group: root
        mode: "0755"
    - name: Install dependencies
-     shell: go get
      args:
        chdir: /home/ubuntu/cri-dockerd/
+     shell: go get  
    - name: Build binary
      shell: go build -o bin/cri-dockerd
      args:
