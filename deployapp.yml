@@ -1,0 +1,11 @@
+---
+ - name: Running app on Test-server
+   hosts: all
+   become: true
+   tasks:
+   - name: deploy app
+     command: kubectl create deployment medicure --image=snehalatha15/healthcare:latest
+   - name: sleeping
+     command: sleep 20
+   - name: ServiceFile
+     command: kubectl expose deployment medicure --type=NodePort --port=8083
