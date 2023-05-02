@@ -1,5 +1,5 @@
 ---
- - name: Minikube-app installation
+ - name: Installing minikube-app on Test-server
    hosts: all
    become: true
    tasks:
@@ -11,7 +11,7 @@
      command: sudo mv ./kubectl /usr/local/bin/kubectl
    - name: 4
      command: sudo apt-get update
-   - name: docker installation
+   - name: install docker
      command: sudo apt-get install -y docker.io
      become: yes
    - name: start docker service using systemctl
@@ -35,7 +35,7 @@
      command: ./installer_linux
    - name: 11
      become: true
-     script: bashProfile.sh 
+     script: bashProfile.sh
      args:
        chdir: /home/ubuntu/cri-dockerd
    - name: Create directory
