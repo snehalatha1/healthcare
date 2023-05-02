@@ -46,10 +46,5 @@ pipeline{
                      sh 'terraform apply --auto-approve'
                   }
               }
-              stage('ansible'){
-                   steps{
-                       ansiblePlaybook credentialsId: 'key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/var/lib/jenkins/workspace/health/inventory', playbook: 'minikube.yml'
-}
-   }
 }
 }
